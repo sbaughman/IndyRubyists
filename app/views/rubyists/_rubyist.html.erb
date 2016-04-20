@@ -1,10 +1,13 @@
-<img src="<%= rubyist.avatar_url %>" class="img-responsive">
-<h3><%= link_to rubyist.login, rubyist.html_url %></h3>
-<ul>
-  <li><h4>Joined Github:</h4></li>
-  <li><%= rubyist.created_at %></li>
-  <li><h4>Repo Count:</h4></li>
-  <li><%= rubyist.public_repos %></li>
-  <li><h4>Followers:</h4></li>
-  <li><%= rubyist.followers %></li>
-</ul>
+<div class="col-sm-6 col-md-4 rubyist">
+  <div class="thumbnail">
+    <img src="<%= rubyist.avatar_url %>" class="img-responsive">
+    <div class="caption">
+      <h3 class="text-center"><%= link_to rubyist.login, rubyist.html_url %></h3>
+      <ul class="list-group">
+        <li class="list-group-item"><h4>Joined Github:</h4> <%= rubyist.created_at.strftime("%b %d, %Y") %></li>
+        <li class="list-group-item"><h4>Repo Count:</h4> <%= rubyist.public_repos %></li>
+        <li class="list-group-item"><h4>Followers:</h4><%= rubyist.followers %></li>
+      </ul>
+    </div>
+  </div>
+</div>

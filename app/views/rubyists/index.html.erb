@@ -3,3 +3,5 @@
 <% @rubyists.each do |rubyist| %>
   <%= render partial: 'rubyist', locals: { rubyist: user(rubyist) } %>
 <% end %>
+
+<%= paginate @rubyists, :theme => 'twitter-bootstrap-3' %>
