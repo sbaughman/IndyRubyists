@@ -26,12 +26,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'figaro'
 gem 'bootstrap-sass'
 gem "octokit", "~> 4.0"
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
+gem 'pry-rails', :group => :development
 gem 'rails_12factor', group: :production
+gem 'figaro'
+
 
 
 # Use Unicorn as the app server
