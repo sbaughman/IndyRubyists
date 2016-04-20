@@ -6,4 +6,9 @@ class RubyistsController < ApplicationController
     @rubyists = Kaminari.paginate_array(response).page(params[:page]).per(30)
   end
 
+  def show
+    @user = Octokit.user(params[:username])
+    @events = @user.rels[:events].get.data
+  end
+
 end
