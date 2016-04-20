@@ -1,0 +1,7 @@
+<h2>Recent Github Activity for <%= link_to @user.login, @user.html_url %></h2>
+
+<% @events.each do |event| %>
+  <div class="col-xs-12">
+    <h4><%= event.type %> to <%= link_to event.repo[:name], event.repo[:url].gsub('api.', '').gsub('/repos', '') %> on <%= event.created_at.strftime("%c") %></h4>
+  </div>
+<% end %>

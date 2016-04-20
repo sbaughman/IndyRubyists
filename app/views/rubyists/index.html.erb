@@ -1,0 +1,8 @@
+<h1>Rubyists in Indy</h1>
+<div>
+  <% @rubyists.each do |rubyist| %>
+    <%= render partial: 'rubyist', locals: { rubyist: user(rubyist) } %>
+  <% end %>
+</div>
+
+<%= paginate @rubyists, :theme => 'twitter-bootstrap-3' %>
