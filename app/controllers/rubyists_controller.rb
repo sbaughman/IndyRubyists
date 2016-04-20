@@ -1,10 +1,7 @@
 class RubyistsController < ApplicationController
 
-
-  private
-
-  def client
-    @client ||= Octokit::Client.new(:access_token => ENV['github_access_token'])
+  def index
+    @rubyists = Octokit.search_users("location:Indianapolis language:Ruby", :sort => "created").items
   end
 
 end
