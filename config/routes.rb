@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'rubyists#index'
   get  '/username/:username' => 'rubyists#show', as: :rubyist
+  get  '/username/:username/repos/' => 'rubyists#user_repos', as: :rubyist_repos
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

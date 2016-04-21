@@ -8,6 +8,7 @@
         <li class="list-group-item"><h4>Repo Count:</h4> <%= rubyist.public_repos %></li>
         <li class="list-group-item"><h4>Followers:</h4><%= rubyist.followers %></li>
         <li class="list-group-item"><%= link_to "Recent Activity on Github", rubyist_path(username: rubyist.login) %></li>
+        <li class="list-group-item"><%= link_to "All Repos", rubyist_repos_path(username: rubyist.login) %></li>
       </ul>
     </div>
   </div>

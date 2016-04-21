@@ -1,7 +1,14 @@
 <h2>Recent Github Activity for <%= link_to @user.login, @user.html_url %></h2>
 
-<% @events.each do |event| %>
-  <div class="col-xs-12">
-    <h4><%= event.type %> to <%= link_to event.repo[:name], event.repo[:url].gsub('api.', '').gsub('/repos', '') %> on <%= event.created_at.strftime("%c") %></h4>
-  </div>
-<% end %>
+<div class="events">
+  <% @events.each do |event| %>
+    <div class="col-xs-12">
+      <h4><%= event.type %> to <%= link_to event.repo[:name], event.repo[:url].gsub('api.', '').gsub('/repos', '') %> on <%= event.created_at.strftime("%c") %></h4>
+    </div>
+  <% end %>
+
+  <%= paginate @events, :theme => 'twitter-bootstrap-3' %>
+</div>
+
+<%= link_to "All Indy Rubyists", root_path, class: "btn btn-primary"%>
+<%= link_to "All Repos by #{@user.login}", rubyist_repos_path(username: @user.login), class: "btn btn-default" %>

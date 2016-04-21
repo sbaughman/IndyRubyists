@@ -1,0 +1,12 @@
+<h2>Showing Repos for <%= link_to @user.login, @user.html_url %></h2>
+
+<div class="repos">
+  <% @repos.each do |repo| %>
+    <h4><%= link_to repo.name, repo.url.gsub('api.', '').gsub('/repos', '') %> was created on: <%= repo.created_at.strftime("%c") %> <i class="glyphicon glyphicon-star text-right"></i><%= repo.stargazers_count %></h4>
+  <% end %>
+
+  <%= paginate @repos, :theme => 'twitter-bootstrap-3' %>
+</div>
+
+<%= link_to "All Indy Rubyists", root_path, class: "btn btn-primary"%>
+<%= link_to "Recent Activity by #{@user.login}", rubyist_path(username: @user.login), class: "btn btn-default" %>
